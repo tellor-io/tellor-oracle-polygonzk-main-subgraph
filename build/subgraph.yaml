@@ -2,7 +2,7 @@ specVersion: 1.0.0
 indexerHints:
   prune: auto
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: Contract
@@ -25,7 +25,7 @@ dataSources:
         - ValueRemoved
       abis:
         - name: Contract
-          file: ./abis/Contract.json
+          file: Contract/abis/Contract.json
       eventHandlers:
         - event: NewReport(indexed bytes32,indexed uint256,bytes,uint256,bytes,indexed address)
           handler: handleNewReport
@@ -41,4 +41,4 @@ dataSources:
           handler: handleStakeWithdrawn
         - event: ValueRemoved(bytes32,uint256)
           handler: handleValueRemoved
-      file: ./src/mapping.ts
+      file: Contract/Contract.wasm
